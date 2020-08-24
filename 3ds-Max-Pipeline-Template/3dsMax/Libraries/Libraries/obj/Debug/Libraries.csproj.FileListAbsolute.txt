@@ -1,5 +1,0 @@
-C:\Users\AdrianWoods\Documents\GitHub\3dsMax\Libraries\Libraries\bin\Debug\Libraries.dll
-C:\Users\AdrianWoods\Documents\GitHub\3dsMax\Libraries\Libraries\bin\Debug\Libraries.pdb
-C:\Users\AdrianWoods\Documents\GitHub\3dsMax\Libraries\Libraries\obj\Debug\Libraries.csproj.CoreCompileInputs.cache
-C:\Users\AdrianWoods\Documents\GitHub\3dsMax\Libraries\Libraries\obj\Debug\Libraries.dll
-C:\Users\AdrianWoods\Documents\GitHub\3dsMax\Libraries\Libraries\obj\Debug\Libraries.pdb

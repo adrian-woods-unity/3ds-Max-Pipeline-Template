@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Command</Title>
+        </Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>Command</ID>
+					<ToolTip>ICommand</ToolTip>
+					<Default>Command</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[#region public ICommand $Command$;
+		ActionCommand _action$Command$;
+		public ICommand $Command$ => _action$Command$ ?? (_action$Command$ = new ActionCommand($Command$Execute));
+		#endregion
+		
+		void $Command$Execute()
+		{
+		}]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Notify Property Changed</Title>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>NotifyPropertyChanged</ID>
+					<ToolTip>NotifyPropertyChanged</ToolTip>
+					<Default>PropertyChanged</Default>
+				</Literal>
+				<Literal>
+					<ID>Type</ID>
+					<ToolTip>Type of property</ToolTip>
+					<Default>Type</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[#region public $Type$ $NotifyPropertyChanged$ (INotifyPropertyChanged)
+        private $Type$ _property$NotifyPropertyChanged$;
+        public $Type$ $NotifyPropertyChanged$
+        {
+			get => _property$NotifyPropertyChanged$;
+			set => SetProperty(ref _property$NotifyPropertyChanged$, value);
+        }
+        #endregion]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Notify Property Changed w/ OnChanged</Title>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>NotifyPropertyChangedOnChanged</ID>
+					<ToolTip>NotifyPropertyChanged w/ OnChanged command</ToolTip>
+					<Default>PropertyChangedOnChanged</Default>
+				</Literal>
+				<Literal>
+					<ID>Type</ID>
+					<ToolTip>Type of property</ToolTip>
+					<Default>Type</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[#region public $Type$ $NotifyPropertyChangedOnChanged$ (INotifyPropertyChanged w/ OnChanged)
+		private $Type$ _property$NotifyPropertyChangedOnChanged$;
+		public $Type$ $NotifyPropertyChangedOnChanged$
+		{
+			get => _property$NotifyPropertyChangedOnChanged$;
+			set => SetProperty(ref _property$NotifyPropertyChangedOnChanged$, value, (oldValue, newValue) => $NotifyPropertyChangedOnChanged$Execute(_property$NotifyPropertyChangedOnChanged$, value));
+		}
+		#endregion
+
+		public void $NotifyPropertyChangedOnChanged$Execute($Type$ oldValue, $Type$ newValue)
+		{
+		}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
