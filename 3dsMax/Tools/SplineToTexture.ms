@@ -1,6 +1,15 @@
 try
 (
-	rollout splineToTextureRollout "Spline To Texture"
+	if (_unitySplineToTextureRollout != undefined) then
+	(
+		DestroyDialog _unitySplineToTextureRollout
+	)
+	else
+	(
+		global  _unitySplineToTextureRollout
+	)
+	
+	rollout _unitySplineToTextureRollout "Spline To Texture"
 	(
 		fn splineFilter obj = classof obj == SplineShape
 		
@@ -78,7 +87,7 @@ try
 						splinePos = lengthInterp spline percentage
 						
 						ratio = splinePos / (length divisor)
-						pixelVector = 127 + (ratio * 127)
+						pixelVector = 127.0 + (ratio * 127.0)
 						
 						-- we need to swizzle since Unity is Y up
 						pixelColor = pixelVector as color
@@ -102,8 +111,7 @@ try
 		)
 	)
 	
-	DestroyDialog splineToTextureRollout
-	CreateDialog splineToTextureRollout 650 195
+	CreateDialog _unitySplineToTextureRollout 650 195
 )
 catch
 (
